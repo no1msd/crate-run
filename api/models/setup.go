@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/jinzhu/gorm"
-	_ "github.com/mattn/go-sqlite3"
+	_ "github.com/mattn/go-sqlite3" // needed for gorm sqlite support
 )
 
 // OpenDatabase opens an SQLite database file on the given path. It auto-migrates the models.

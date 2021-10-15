@@ -19,8 +19,13 @@ type User struct {
 }
 
 var (
-	ErrUsernameTaken     = errors.New("username taken")
-	ErrInvalidLevel      = errors.New("invalid level number")
+	// ErrUsernameTaken is returned when a user with the given username already exists.
+	ErrUsernameTaken = errors.New("username taken")
+
+	// ErrInvalidLevel is returned when the given level number is too low or too high.
+	ErrInvalidLevel = errors.New("invalid level number")
+
+	// ErrUserAlreadyExists is returned when a given user is already in the database.
 	ErrUserAlreadyExists = errors.New("user already exists")
 )
 

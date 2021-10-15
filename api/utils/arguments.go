@@ -6,11 +6,14 @@ import (
 	"github.com/docopt/docopt-go"
 )
 
+// Arguments holds the parsed command line options of the application.
 type Arguments struct {
 	DebugMode  bool   `docopt:"--debug"`
 	ConfigPath string `docopt:"--configPath"`
 }
 
+// ParseArguments provides the docopt command line interface and returns the parsed arguments
+// when appropriate.
 func ParseArguments() (*Arguments, error) {
 	usage := `crate.run API.
 
