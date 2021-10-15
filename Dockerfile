@@ -24,17 +24,17 @@ WORKDIR /src
 RUN apk add gcc musl-dev && \
     go test ./... && \
     go build && \
-    strip crateapi
+    strip crate-run-api
 
 # final stage
 FROM alpine:3.12.0
 
 COPY --from=gamebuilder /build /content
-COPY --from=apibuilder /src/crateapi /crate-api
+COPY --from=apibuilder /src/crate-run-api /crate-run-api
 COPY web/* /content/
 
 EXPOSE 9080
 
 WORKDIR /data
 
-CMD [ "/crate-api" ]
+CMD [ "/crate-run-api" ]
