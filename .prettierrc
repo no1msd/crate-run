@@ -1,0 +1,14 @@
+{
+    "tabWidth": 4,
+    "useTabs": false,
+    "printWidth": 96,
+    "overrides": [
+        {
+            "files": "*.ts",
+            "options": {
+                "singleQuote": true,
+                "prettier.printWidth": 96
+            }
+        }
+    ]
+}
