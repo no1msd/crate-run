@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://resources/fonts/ui_font_small.tres" type="DynamicFont" id=1]
+[ext_resource path="res://resources/fonts/ui_font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://resources/back.png" type="Texture" id=3]
+[ext_resource path="res://src/ui/highscores.gd" type="Script" id=4]
+[ext_resource path="res://src/ui/common/loading_indicator.tscn" type="PackedScene" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="HighScores" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+margin_left = 224.0
+margin_top = 492.0
+margin_right = 375.0
+margin_bottom = 574.0
+custom_constants/separation = 15
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+margin_right = 151.0
+margin_bottom = 28.0
+custom_fonts/font = ExtResource( 2 )
+text = "High Scores"
+align = 1
+
+[node name="Control" type="Control" parent="CenterContainer/VBoxContainer"]
+margin_top = 43.0
+margin_right = 151.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="Top10Container" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+margin_top = 82.0
+margin_right = 151.0
+margin_bottom = 82.0
+custom_constants/separation = 15
+
+[node name="CurrentUserMargin" type="Control" parent="CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 97.0
+margin_right = 151.0
+margin_bottom = 121.0
+rect_min_size = Vector2( 0, 24 )
+
+[node name="CurrentUserLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+visible = false
+margin_top = 97.0
+margin_right = 151.0
+margin_bottom = 116.0
+custom_fonts/font = ExtResource( 1 )
+text = "43. msd 3213"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BottomBox" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = -90.0
+margin_right = -20.0
+margin_bottom = -20.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BottomBox"]
+margin_right = 560.0
+margin_bottom = 70.0
+mouse_filter = 2
+
+[node name="BackButton" type="Button" parent="BottomBox/HBoxContainer"]
+margin_right = 76.0
+margin_bottom = 70.0
+mouse_default_cursor_shape = 2
+custom_styles/focus = SubResource( 2 )
+icon = ExtResource( 3 )
+flat = true
+
+[node name="LoadingIndicator" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[connection signal="pressed" from="BottomBox/HBoxContainer/BackButton" to="." method="_on_BackButton_pressed"]

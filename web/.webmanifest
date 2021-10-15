@@ -1,0 +1,15 @@
+{
+    "short_name": "crate.run",
+    "icons": [
+      {
+        "src": "/pwa-icon.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/",
+    "background_color": "#556270",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "#4ecdc4"
+}

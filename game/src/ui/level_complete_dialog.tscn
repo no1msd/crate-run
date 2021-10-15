@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/ui/level_complete_dialog.gd" type="Script" id=1]
+[ext_resource path="res://resources/dialogbg2.png" type="Texture" id=2]
+[ext_resource path="res://resources/fonts/Comfortaa-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://resources/button_style.tres" type="StyleBox" id=4]
+[ext_resource path="res://resources/green_button_style.tres" type="StyleBox" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+use_filter = true
+extra_spacing_top = 4
+font_data = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.501961 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.840881
+margin_top = 0.0670163
+margin_right = -0.840881
+margin_bottom = 0.0670166
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+margin_top = 361.0
+margin_right = 600.0
+margin_bottom = 705.0
+rect_min_size = Vector2( 600, 0 )
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 580.0
+margin_bottom = 324.0
+texture = ExtResource( 2 )
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 17
+patch_margin_bottom = 17
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
+visible = false
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 580.0
+margin_bottom = 324.0
+color = Color( 0.176471, 0.0470588, 0.211765, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 580.0
+margin_bottom = 324.0
+custom_constants/margin_right = 25
+custom_constants/margin_top = 25
+custom_constants/margin_left = 25
+custom_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/MarginContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 535.0
+margin_bottom = 279.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/MarginContainer/VBoxContainer"]
+margin_right = 510.0
+margin_bottom = 194.0
+custom_constants/margin_bottom = 35
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/MarginContainer/VBoxContainer/MarginContainer"]
+margin_right = 510.0
+margin_bottom = 159.0
+custom_constants/separation = 25
+
+[node name="CompletedLabel" type="Label" parent="Control/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 510.0
+margin_bottom = 37.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Level 3 completed!"
+align = 1
+autowrap = true
+
+[node name="StatisticsLabel" type="Label" parent="Control/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 62.0
+margin_right = 510.0
+margin_bottom = 111.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Moves: 23
+Time: 12:32:32.2323"
+align = 1
+autowrap = true
+
+[node name="PersonalBestLabel" type="Label" parent="Control/MarginContainer/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 136.0
+margin_right = 510.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 2 )
+text = "New personal best!"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/MarginContainer/VBoxContainer"]
+margin_top = 198.0
+margin_right = 510.0
+margin_bottom = 254.0
+alignment = 2
+
+[node name="SelectorButton" type="Button" parent="Control/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 232.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 232, 56 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = ExtResource( 4 )
+custom_styles/pressed = ExtResource( 4 )
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.333333, 0.384314, 0.439216, 1 )
+custom_colors/font_color_hover = Color( 0.298039, 0.345098, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Level selector"
+
+[node name="Control" type="Control" parent="Control/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 236.0
+margin_right = 335.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+
+[node name="NextLevelButton" type="Button" parent="Control/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 339.0
+margin_right = 510.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 171, 56 )
+mouse_default_cursor_shape = 2
+custom_styles/hover = ExtResource( 5 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.333333, 0.384314, 0.439216, 1 )
+custom_colors/font_color_hover = Color( 0.298039, 0.345098, 0.392157, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Next level"
+
+[connection signal="pressed" from="Control/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/SelectorButton" to="." method="_on_SelectorButton_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer/NextLevelButton" to="." method="_on_NextLevelButton_pressed"]

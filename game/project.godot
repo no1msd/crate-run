@@ -1,0 +1,199 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "APIServiceBase",
+"language": "GDScript",
+"path": "res://src/autoload/api/api_service_base.gd"
+}, {
+"base": "Node",
+"class": "AnimHelper",
+"language": "GDScript",
+"path": "res://src/autoload/anim_helper.gd"
+}, {
+"base": "Node",
+"class": "AsyncResult",
+"language": "GDScript",
+"path": "res://src/utils/async_result.gd"
+}, {
+"base": "Node",
+"class": "AuthContext",
+"language": "GDScript",
+"path": "res://src/autoload/auth_context.gd"
+}, {
+"base": "Node",
+"class": "Constants",
+"language": "GDScript",
+"path": "res://src/autoload/constants.gd"
+}, {
+"base": "Node2D",
+"class": "Crate",
+"language": "GDScript",
+"path": "res://src/entities/crate.gd"
+}, {
+"base": "Node",
+"class": "DialogOpener",
+"language": "GDScript",
+"path": "res://src/autoload/dialog_opener.gd"
+}, {
+"base": "ColorRect",
+"class": "GeneralDialog",
+"language": "GDScript",
+"path": "res://src/ui/general_dialog.gd"
+}, {
+"base": "TileMap",
+"class": "Grid",
+"language": "GDScript",
+"path": "res://src/entities/grid.gd"
+}, {
+"base": "Node",
+"class": "HTTPHandler",
+"language": "GDScript",
+"path": "res://src/autoload/http_handler.gd"
+}, {
+"base": "APIServiceBase",
+"class": "HighScoreAPIService",
+"language": "GDScript",
+"path": "res://src/autoload/api/highscore_api_service.gd"
+}, {
+"base": "Control",
+"class": "HighScores",
+"language": "GDScript",
+"path": "res://src/ui/highscores.gd"
+}, {
+"base": "Control",
+"class": "InGameUI",
+"language": "GDScript",
+"path": "res://src/ui/in_game_ui.gd"
+}, {
+"base": "Control",
+"class": "Level",
+"language": "GDScript",
+"path": "res://src/levels/levels.gd"
+}, {
+"base": "ColorRect",
+"class": "LevelCompleteDialog",
+"language": "GDScript",
+"path": "res://src/ui/level_complete_dialog.gd"
+}, {
+"base": "Control",
+"class": "LevelSelector",
+"language": "GDScript",
+"path": "res://src/ui/level_selector.gd"
+}, {
+"base": "ColorRect",
+"class": "LoadingIndicator",
+"language": "GDScript",
+"path": "res://src/ui/common/loading_indicator.gd"
+}, {
+"base": "Node",
+"class": "LoadingManager",
+"language": "GDScript",
+"path": "res://src/autoload/loading_manager.gd"
+}, {
+"base": "Node",
+"class": "LoginManager",
+"language": "GDScript",
+"path": "res://src/autoload/login_manager.gd"
+}, {
+"base": "Control",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://src/ui/main_menu.gd"
+}, {
+"base": "Node",
+"class": "SceneSwitcher",
+"language": "GDScript",
+"path": "res://src/autoload/scene_switcher.gd"
+}, {
+"base": "ColorRect",
+"class": "ToastDialog",
+"language": "GDScript",
+"path": "res://src/ui/toast_dialog.gd"
+}, {
+"base": "APIServiceBase",
+"class": "UserAPIService",
+"language": "GDScript",
+"path": "res://src/autoload/api/user_api_service.gd"
+} ]
+_global_script_class_icons={
+"APIServiceBase": "",
+"AnimHelper": "",
+"AsyncResult": "",
+"AuthContext": "",
+"Constants": "",
+"Crate": "",
+"DialogOpener": "",
+"GeneralDialog": "",
+"Grid": "",
+"HTTPHandler": "",
+"HighScoreAPIService": "",
+"HighScores": "",
+"InGameUI": "",
+"Level": "",
+"LevelCompleteDialog": "",
+"LevelSelector": "",
+"LoadingIndicator": "",
+"LoadingManager": "",
+"LoginManager": "",
+"MainMenu": "",
+"SceneSwitcher": "",
+"ToastDialog": "",
+"UserAPIService": ""
+}
+
+[application]
+
+config/name="crate.run"
+run/main_scene="res://src/ui/main_menu.tscn"
+config/icon="res://resources/tiles/icon.png"
+
+[autoload]
+
+anim_helper="*res://src/autoload/anim_helper.gd"
+dialog_opener="*res://src/autoload/dialog_opener.gd"
+scene_switcher="*res://src/autoload/scene_switcher.gd"
+constants="*res://src/autoload/constants.gd"
+http_handler="*res://src/autoload/http_handler.gd"
+auth_context="*res://src/autoload/auth_context.gd"
+user_api_service="*res://src/autoload/api/user_api_service.gd"
+login_manager="*res://src/autoload/login_manager.gd"
+loading_manager="*res://src/autoload/loading_manager.gd"
+highscore_api_service="*res://src/autoload/api/highscore_api_service.gd"
+
+[display]
+
+window/size/width=600
+window/size/height=1066
+window/dpi/allow_hidpi=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
+
+[input]
+
+ui_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+2d/snapping/use_gpu_pixel_snap=true
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.333333, 0.384314, 0.439216, 1 )
+environment/default_environment="res://default_env.tres"
