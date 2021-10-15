@@ -9,7 +9,7 @@ import (
 	"crate-run-api/tokenstore"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // AuthTokenHeader is the HTTP header key where the AuthRequired middleware looks for the

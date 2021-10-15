@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // User represents a single registered player.
@@ -82,7 +82,7 @@ func (u *User) CheckPassword(db *gorm.DB, password string) (bool, error) {
 
 // ChangeNickname updates the user's nickname in the database.
 func (u *User) ChangeNickname(db *gorm.DB, nickname string) error {
-	err := db.Model(u).Update(User{Nickname: nickname}).Error
+	err := db.Model(u).Updates(User{Nickname: nickname}).Error
 
 	if err != nil {
 		return fmt.Errorf("could not update user: %w", err)
@@ -95,7 +95,7 @@ func (u *User) ChangeNickname(db *gorm.DB, nickname string) error {
 func (u *User) GetHighScores(db *gorm.DB) ([]HighScore, error) {
 	var highScores []HighScore
 
-	err := db.Model(u).Association("HighScores").Find(&highScores).Error
+	err := db.Joins("User", u).Find(&highScores).Error
 
 	if err != nil {
 		return nil, fmt.Errorf("could not get user high scores: %w", err)

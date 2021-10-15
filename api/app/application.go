@@ -15,7 +15,7 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // Application holds the dependencies used by the API controllers

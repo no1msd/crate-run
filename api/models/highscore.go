@@ -6,7 +6,7 @@ import (
 	"sort"
 	"time"
 
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 // HighScore represents the highest score of a single user on a single level.

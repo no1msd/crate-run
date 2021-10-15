@@ -37,7 +37,8 @@ func main() {
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	defer db.Close()
+	sqlDB, _ := db.DB()
+	defer sqlDB.Close()
 
 	if !arguments.DebugMode {
 		gin.SetMode(gin.ReleaseMode)

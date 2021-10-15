@@ -4,13 +4,13 @@ package models
 import (
 	"fmt"
 
-	"github.com/jinzhu/gorm"
-	_ "github.com/mattn/go-sqlite3" // needed for gorm sqlite support
+	"gorm.io/driver/sqlite"
+	"gorm.io/gorm"
 )
 
 // OpenDatabase opens an SQLite database file on the given path. It auto-migrates the models.
 func OpenDatabase(path string) (*gorm.DB, error) {
-	database, err := gorm.Open("sqlite3", path)
+	database, err := gorm.Open(sqlite.Open(path), &gorm.Config{})
 
 	if err != nil {
 		return nil, fmt.Errorf("could not open database: %w", err)
