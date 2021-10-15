@@ -2,10 +2,10 @@
 
 ![crate.run logo](https://raw.githubusercontent.com/no1msd/crate-run/main/game/resources/logo.png)
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/no1msd/crate-run)](https://goreportcard.com/badge/github.com/no1msd/crate-run)
+[![Go Report Card](https://goreportcard.com/badge/github.com/no1msd/crate-run)](https://goreportcard.com/report/github.com/no1msd/crate-run)
 [![Open Source Love](https://badges.frapsoft.com/os/mit/mit.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
-![Godot v3.4](https://img.shields.io/badge/Godot-v3.4-%23478cbf?logo=godot-engine&logoColor=white)
-![Godot v3.4](https://img.shields.io/badge/Go-v1.17-%23478cbf?logo=go&logoColor=white)
+[![Godot v3.4](https://img.shields.io/badge/Godot-v3.4-%23478cbf?logo=godot-engine&logoColor=white)](https://godotengine.org/)
+[![Go v1.17](https://img.shields.io/badge/Go-v1.17-%23478cbf?logo=go&logoColor=white)](https://golang.org/)
 
 crate.run is a simple HTML5 sokoban game built with the Godot game engine and Golang. Try it out 
 online at [crate.run](https://crate.run)!
