@@ -121,7 +121,7 @@ func (s *MemoryStore) ResetTokenTimeout(token string) error {
 	data, err := s.sessionDataForToken(token)
 
 	if err != nil {
-		return fmt.Errorf("could not get reset token timeout: %w", err)
+		return fmt.Errorf("could not reset token timeout: %w", err)
 	}
 
 	data.updated = s.TimeProvider.Now()

@@ -17,10 +17,7 @@ import (
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
-	arguments, err := utils.ParseArguments()
-	if err != nil {
-		log.Fatal(err.Error())
-	}
+	arguments := utils.ParseArguments()
 
 	configFile, err := os.OpenFile(arguments.ConfigPath, os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {

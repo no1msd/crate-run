@@ -6,7 +6,7 @@ import (
 	"github.com/go-playground/assert/v2"
 )
 
-func TestHashPasswor(t *testing.T) {
+func TestHashPassword(t *testing.T) {
 	assert.Equal(t,
 		HashPassword(""),
 		"faf5d6fe5060d5b9e3f28f33794464d7e924184ab4bc230be17765eff22be81f")
