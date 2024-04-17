@@ -7,13 +7,12 @@
 [![Godot v3.4](https://img.shields.io/badge/Godot-v3.4-%23478cbf?logo=godot-engine&logoColor=white)](https://godotengine.org/)
 [![Go v1.17](https://img.shields.io/badge/Go-v1.17-%23478cbf?logo=go&logoColor=white)](https://golang.org/)
 
-crate.run is a simple HTML5 sokoban game built with the Godot game engine and Golang. Try it out 
-online at [crate.run](https://crate.run)!
+crate.run is a simple HTML5 sokoban game built with the Godot game engine and Golang.
 
 ## Run with Docker Compose
 
 ```shell script
-docker-compose up
+docker compose up
 ```
 
 This will export the Godot project to HTML5, build the API and run the resulting Docker image 
